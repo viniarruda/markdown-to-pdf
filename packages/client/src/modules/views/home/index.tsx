@@ -1,15 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-const Home = () => {
-  const [text, setText] = useState<string>('My Button');
-
-  return (
-    <>
-      <button onClick={() => setText('Button update')}>
-        {text}
-      </button>
-    </>
-  );
-};
+const Home = () => (
+  <>
+    <h1>Home</h1>
+  </>
+);
 
 export default Home;

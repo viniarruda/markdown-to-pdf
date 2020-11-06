@@ -1,7 +1,9 @@
 import { Router } from 'express';
 
+import FileController from './app/controllers/FileController';
+
 const routes = new Router();
 
-routes.get('/health', 'ok');
+routes.get('/health', FileController.transform);
 
 export default routes;

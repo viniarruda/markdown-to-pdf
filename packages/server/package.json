@@ -1,13 +1,10 @@
 {
-  "name": "markdown-to-pdf",
-  "version": "1.0.0",
-  "description": "Transform your markdown to pdf",
+  "name": "@monorepo/server",
+  "version": "0.0.1",
+  "private": true,
   "main": "dist/server.js",
-  "repository": "git@github.com:viniarruda/markdown-to-pdf.git",
-  "author": "Vinicius Arruda <viniarruda.souza@gmail.com>",
-  "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/server.js",
+    "start": "nodemon src/server.js",
     "prod": "node dist/server.js",
     "build": "sucrase ./src -d ./dist --transforms imports"
   },

@@ -7,19 +7,13 @@
   "author": "Vinicius Arruda",
   "scripts": {
     "story": "lerna run story --stream",
-    "start": "lerna run start --parallel --scope '{client}'",
+    "start": "lerna run start --stream",
     "test": "lerna run test --stream "
   },
   "workspaces": {
     "packages": [
       "packages/*"
     ]
-  },
-  "dependencies": {
-    "react": "16.13.1",
-    "react-dom": "^16.12.0",
-    "styled-components": "^4.4.1",
-    "styled-reset": "^1.1.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
