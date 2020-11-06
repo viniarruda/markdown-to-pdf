@@ -1,11 +1,11 @@
-# markdown-to-pdf
+# Markdown-to-pdf
 
 Transform your markdown repository to pdf
 
 
 ## Monorepo
 
-# Packages:
+### Packages:
 
 - client (React)
 - server (Express)
