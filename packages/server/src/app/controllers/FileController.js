@@ -1,9 +1,8 @@
 import markdownPdf from 'markdown-pdf';
-import multer from 'multer';
+import fs from 'fs';
 
 import { httpClient, api } from '../utils';
 
-const upload = multer({ dest: 'files/' });
 const WAIT_FOR_RENDER_DELAY = 1500;
 
 const options = {
@@ -18,13 +17,33 @@ class FileController {
     try {
       const { owner, repo, path } = req.body; // TODO: VALIDATE REQ BODY PARAMS
 
+      console.log(
+        'endpoints',
+        `${api.github_api}/repos/${owner}/${repo}/contents/${path}`
+      );
+
       const { data, status } = await httpClient().get(
         `${api.github_api}/repos/${owner}/${repo}/contents/${path}`
       );
 
-      const payload = await httpClient().get(`${data.download_url}`);
+      // const payload = await httpClient().get(`${data.download_url}`);
 
-      console.log('payload MD', payload);
+      // console.log('payload:', payload);
+
+      // fs.writeFile(`${name}`, payload, err => {
+      //   if (err) {
+      //     return console.log('error:', err);
+      //   }
+
+      //   return console.log('The file was saved!');
+      // });
+
+      // const fileReaded = fs.readFile(`${name}`, (err, readfileData) => {
+      //   if (err) throw err;
+      //   console.log(readfileData);
+      // });
+
+      // console.log('fileReaded', fileReaded);
 
       // markdownPdf(options)
       //   .from(payload)

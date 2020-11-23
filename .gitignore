@@ -26,4 +26,4 @@ yarn-error.log*
 /packages/**/lib
 /packages/**/lib-esm
 
-*/.env
+/packages/server/.env
