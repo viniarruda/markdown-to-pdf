@@ -22,55 +22,24 @@ class FileController {
         `${api.github_api}/repos/${owner}/${repo}/contents/${path}`
       );
 
-      const { data, status } = await httpClient().get(
+      const { data } = await httpClient().get(
         `${api.github_api}/repos/${owner}/${repo}/contents/${path}`
       );
 
-      // const payload = await httpClient().get(`${data.download_url}`);
+      const payload = await httpClient().get(`${data.download_url}`);
 
-      // console.log('payload:', payload);
+      const markdownPath = `${__dirname}/../files/markdowns/${data.name}`;
+      const pdfPath = `${__dirname}/../files/${data.name}.pdf`;
 
-      // fs.writeFile(`${name}`, payload, err => {
-      //   if (err) {
-      //     return console.log('error:', err);
-      //   }
-
-      //   return console.log('The file was saved!');
-      // });
-
-      // const fileReaded = fs.readFile(`${name}`, (err, readfileData) => {
-      //   if (err) throw err;
-      //   console.log(readfileData);
-      // });
-
-      // console.log('fileReaded', fileReaded);
-
-      // markdownPdf(options)
-      //   .from(payload)
-      //   .to(`${__dirname}/../files/tranformed.pdf`, () => {
-      //     console.log('Done');
-      //   });
-
-      // return res.status(200).json({ status, data });
-      return res.status(200).json({ status, data });
-    } catch (error) {
-      return res.status(400).json(error.toString());
-    }
-  }
-
-  generatePdfFile(req, res) {
-    try {
-      const { path, originalname } = req.file;
-
-      const formattedName = originalname.split('.')[0];
+      fs.writeFileSync(markdownPath, payload.data);
 
       markdownPdf(options)
-        .from(path)
-        .to(`${__dirname}/../files/${formattedName}.pdf`, () => {
+        .from(markdownPath)
+        .to(pdfPath, () => {
           console.log('Done');
         });
 
-      return res.status(200).json({ status: 'Pdf created' });
+      return res.status(200).json({ file: pdfPath });
     } catch (error) {
       return res.status(400).json(error.toString());
     }
