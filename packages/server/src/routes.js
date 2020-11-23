@@ -8,5 +8,6 @@ const routes = new Router();
 const upload = multer({ dest: 'files/' });
 
 routes.post('/upload', upload.single('file'), FileController.generatePdfFile);
+routes.post('/markdown', FileController.downloadMarkdownFile);
 
 export default routes;

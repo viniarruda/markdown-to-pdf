@@ -15,4 +15,3 @@ const Grid: FunctionComponent<IGridProps> = ({
 );
 
 export default Grid;
-]

@@ -3,7 +3,7 @@
 - Brazilian, 24 years
 - Software Engineer and Ux Designer
 - São Paulo/SP - Brazil
-- Phone: +55 (11) 95492-8333 / E-mail: viniarruda.souza@gmail.com
+- Phone: +55 (11) 95492-8333 / mail: viniarruda.souza@gmail.com
 - https://linkedin.com/in/viniz-arruda
 - https://github.com/viniarruda/
 
