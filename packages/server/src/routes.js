@@ -4,6 +4,6 @@ import FileController from './app/controllers/FileController';
 
 const routes = new Router();
 
-routes.get('/health', FileController.transform);
+routes.post('/markdown', FileController.downloadMarkdownFile);
 
 export default routes;
